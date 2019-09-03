@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>The Blog</title>
+    <title>{% block title %}{%  endblock %}</title>
     <!-- <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -12,8 +12,10 @@
   <body>
     <div class="page-header">
       {% if user.is_authenticated %}
-      <a href="{% url "post_draft_list" %}" class="top-menu"><i class="fab fa-firstdraft"></i></a>
+        <a href="{% url "post_draft_list" %}" class="top-menu"><i class="fab fa-firstdraft"></i></a>
         <a href="{% url "post_new" %}" class="top-menu"><i class="fas fa-plus"></i></a>
+      {% else %}
+        <a href="{% url "login" %}" class="top-menu"><i class="fas fa-sign-in-alt"></i></a>
       {% endif %}
       <h1><a href="{% url "post_list" %}">The Blog</a></h1>
     </div>
