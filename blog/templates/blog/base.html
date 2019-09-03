@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+  <body>
+    <div class="page-header">
+      <h1><a href="{% url "post_list" %}">The Blog</a></h1>
+    </div>
+
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}
+          {% endblock %}
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
