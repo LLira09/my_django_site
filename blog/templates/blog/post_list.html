@@ -10,12 +10,10 @@
       </div>
 
       <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-<<<<<<< HEAD
+
       <p>{{ post.text | markdown | safe | linebreaksbr }}</p>
-=======
-      <p>{{ post.text|truncatechars:50 }}</p>
       <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
->>>>>>> add_comments
+
     </div>
   {% endfor %}
 {% endblock %}
